@@ -12,8 +12,8 @@
            # Must be an absolute path, or relative path from working_directory
            root: my_workspace
            # Must be relative path from root
-          paths:
-            - echo-output  
+           paths:
+             - echo-output  
    deploy:
      docker:
        - image: circleci/ruby:2.4.1
@@ -21,7 +21,7 @@
        - checkout
        - run: echo "hello from Deploy section"
        - attach_workspace:
-          # Must be absolute path or relative path from working_directory
+           # Must be absolute path or relative path from working_directory
            at: my_workspace
        - run: |
            if [[ $(cat my_workspace/echo-output) == "Trying out workspaces" ]]; then
